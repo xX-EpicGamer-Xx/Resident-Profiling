@@ -1,0 +1,265 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #08110E, #3F6656 );
+}
+
+.main-tab {
+    width: 94.79%;
+    height: 90.74%;
+    border-left: 1px solid #57977C;
+    border-right: 1px solid #57977C;
+    border-bottom: 1px solid #57977C;
+    border-top: 100px solid #57977C; /* Top border as percentage of height */
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+}
+
+.separator {
+    position: absolute;
+    left: 10px; /* space from the left edge inside the rectangle */
+    top: 50%; 
+    left: 10%;
+    transform: translateY(-45%);
+    width: 1px;
+    height: 70%;
+    background-color: #57977C;
+}
+
+#dashboard-tab {
+    position: absolute;
+    top: 20%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/dashboard.png');
+}
+
+#dashboard-container {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% black background */
+    height: 120px;
+    width: 120px;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+#analytics-tab {
+    position: absolute;
+    top: 35%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/analytics.png');
+    background-color: transparent;
+}
+
+#database-tab {
+    position: absolute;
+    top: 50%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/table.png');
+    background-color: transparent;
+}
+
+#filing-tab {
+    position: absolute;
+    top: 65%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/filing(clicked).png');
+    background-color: transparent;
+    z-index: 1;
+}
+
+#user-account-tab {
+    position: absolute;
+    top: 85%; /* slight offset from the top */
+    left: 4.5%;
+    object-fit: cover;
+    width: 75px;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/user-account.png');
+    background-color: transparent;
+}
+
+.shade {
+    position: absolute;
+    top: 62.5%; /* slight offset from the top */
+    left: 2.7%;
+    width: 7.3%;
+    height: 12%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.back-up {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    width: 60%;
+    height: 30%;
+    border: 1px solid #57977C;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+    z-index: 1; /* above everything else */
+}
+
+.excel {
+    position: absolute;
+    top: 58%;
+    left: 15%;
+    width: 60%;
+    height: 30%;
+    border: 1px solid #57977C;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+    z-index: 1; /* above everything else */
+}
+
+#back-up {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 800; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#back-up-text {
+    position: absolute;
+    top: 55%;
+    left: 5%;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    user-select: none;
+    z-index: 10;
+}
+
+#excel {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 800; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#excel-text {
+    position: absolute;
+    top: 55%;
+    left: 5%;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    user-select: none;
+    z-index: 10;
+}
+
+
+.excel-button, .back-up-button {
+    position: absolute;
+    top: 0%; /* center vertically */
+    left: 80%; /* center horizontally */
+    width: 20%; /* 200px in percentage */
+    height: 100%; /* 70px in percentage */
+    background-color: #57977C;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 50px; /* responsive font size */
+    font-weight: 800;
+    border: none;
+    border-radius: 0px 48px 48px 0px; /* rounded corners */
+    cursor: pointer;
+    z-index: 11; /* higher than text if needed */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.sql-icon {
+    position: absolute;
+    top: 0%;
+    left: 105%;
+    width: 300px;
+    height: 300px;
+    background-image: url('images/sql.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.excel-icon {
+    position: absolute;
+    top: 0%;
+    left: 105%;
+    width: 300px;
+    height: 300px;
+    background-image: url('images/excel.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

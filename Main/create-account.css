@@ -1,0 +1,249 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #08110E, #3F6656 );
+}
+
+.main-tab {
+    width: 94.79%;
+    height: 90.74%;
+    border-left: 1px solid #57977C;
+    border-right: 1px solid #57977C;
+    border-bottom: 1px solid #57977C;
+    border-top: 100px solid #57977C; /* Top border as percentage of height */
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+}
+
+.separator {
+    position: absolute;
+    left: 10px; /* space from the left edge inside the rectangle */
+    top: 50%; 
+    left: 10%;
+    transform: translateY(-45%);
+    width: 1px;
+    height: 70%;
+    background-color: #57977C;
+}
+
+#dashboard-tab {
+    position: absolute;
+    top: 20%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/dashboard.png');
+}
+
+#analytics-tab {
+    position: absolute;
+    top: 35%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/analytics(clicked).png');
+    background-color: transparent;
+    z-index: 1;
+}
+
+#database-tab {
+    position: absolute;
+    top: 50%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/table (clicked).png');
+    background-color: transparent;
+    z-index: 1;
+}
+
+#filing-tab {
+    position: absolute;
+    top: 65%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/filing.png');
+    background-color: transparent;
+}
+
+#user-account-tab {
+    position: absolute;
+    top: 85%; /* slight offset from the top */
+    left: 4.5%;
+    object-fit: cover;
+    width: 75px;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/user-account(clicked).png');
+    background-color: transparent;
+    z-index: 1;
+}
+
+.shade {
+    position: absolute;
+    top: 83.2%; /* slight offset from the top */
+    left: 2.7%;
+    width: 7.3%;
+    height: 12%;
+    border-radius: 0px 0px 0px 50px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.separator {
+    position: absolute;
+    left: 10px; /* space from the left edge inside the rectangle */
+    top: 50%; 
+    left: 10%;
+    transform: translateY(-45%);
+    width: 1px;
+    height: 70%;
+    background-color: #57977C;
+}
+
+.create-account-tab {
+    position: absolute;
+    top: 14.4%;
+    left: 10%;
+    width: 87.4%;
+    height: 81%;
+    background: transparent;
+}
+
+.create-account-btn {
+    position: absolute;
+    top: 90%;
+    left: 0%;
+    height: 10%;
+    width: 100%;
+    background-color: #57977C;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius:  0px 0px 27px 27px;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+.create-button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 70%;
+    border: 1px solid #57977C;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+}
+
+.last-name, .first-name, .middle-name, .suffix  {
+    position: absolute;
+    width: 25%;
+    height: 10%;
+    background: transparent; 
+    border: 1px solid #57977C; 
+    border-radius: 15px; 
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    outline: none;
+    padding: 5px 5px 5px 2%;
+}
+
+.username, .password, .email-address, .re-type-password {
+    position: absolute;
+    width: 40%;
+    height: 10%;
+    background: transparent; 
+    border: 1px solid #57977C; 
+    border-radius: 15px; 
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    outline: none;
+    padding: 5px 5px 5px 2%;
+}
+
+.last-name::placeholder , .first-name::placeholder , .middle-name::placeholder , .suffix::placeholder {
+    color: #57977C;
+    transition: opacity 0.2s ease;
+    position: absolute;
+    left: 7%;
+}
+
+.username::placeholder , .password::placeholder , .email-address::placeholder , .re-type-password::placeholder {
+    color: #57977C;
+    transition: opacity 0.2s ease;
+    position: absolute;
+    left: 5%;
+}
+
+.profile-picture {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 25%;
+    height: 35%;
+    border: 1px solid #57977C;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.profile-picture-button {
+    position: absolute;
+    top: 40%;
+    left: 27%;
+    width: 50px;
+    object-fit: cover;
+    height: 50px;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/edit.png');
+}

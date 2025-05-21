@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="analytics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="main-tab">
+        <div class="tab">
+            <button id="dashboard-tab"></button>
+            <button id="analytics-tab"></button>
+            <button id="database-tab"></button>
+            <button id="filing-tab"></button>
+            <button id="user-account-tab"></button>
+            <div class="shade"></div>
+        </div>
+        <label for="sex-ratio" class="sex-ratio-text">Sex Ratio</label>
+        <div class="sex-ratio">
+            <canvas id="genderChart" width="300" height="300"></canvas>
+
+        </div>
+        <label for="resident-number" class="resident-number-text">Number of Residents</label>
+        <div class="resident-number">
+            <img src="images/users.png" alt="residents" class="residents-icon">
+            <label for="residents" id="residents-number">11,567</label>
+        </div>
+        <label for="family-number" class="family-number-text">Number of Families</label>
+        <div class="family-number">
+            <img src="images/family.png" alt="families" class="family-icon">
+            <label for="family" id="families-number">3,013</label>
+        </div>
+        <label for="age-range" class="age-range-text">Age Range</label>
+        <div class="age-range">
+            <canvas id="ageChart" width="800" height="250"></canvas>
+        </div>
+        <label for="sorting-system" class="sorting-system-text">Sorting System</label>
+        <div class="sorting-system"></div>
+        <div class="separator"></div>
+    </div>
+</body>
+<script>
+    const ctx = document.getElementById('genderChart').getContext('2d');
+  
+    new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Men', 'Women'],
+        datasets: [{
+          label: 'Gender Distribution',
+          data: [5725, 5842], // Adjust data as needed
+          backgroundColor: ['#57977C', '#17412f'], // Blue for boys, Red for girls
+          borderWidth: 0 // Remove border
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top', // Moves legend to the top
+            labels: {
+                
+                color: 'white',
+              boxWidth: 20,
+              padding: 15,
+                font: {
+                    size: 20 // Adjust font size
+                }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let label = context.label || '';
+                let value = context.raw;
+                return `${label}: ${value}`;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    const ageCtx = document.getElementById('ageChart').getContext('2d');
+
+    new Chart(ageCtx, {
+      type: 'bar',
+      data: {
+        labels: ['0-5', '6-10', '11-15', '16-20', '21-25', '26-30', '31-35', '36-40', '41-45', '46-50', '51-55', '56-60', '61+'],
+        datasets: [{
+          label: 'Age Range Count',
+          data: [12, 19, 8, 5, 10, 8, 1, 2, 9, 15, 19, 31, 21], // Replace with your data
+          backgroundColor: '#57977C', // Green bars
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `Count: ${context.raw}`;
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+                
+                color: 'white',
+              display: true,
+              text: 'Number of People',
+              font: {
+                size: 20 // Adjust font size
+            }
+            }
+          },
+          x: {
+            title: {
+                color: 'white',
+              display: true,
+              text: 'Age Range',
+              font: {
+                size: 20 // Adjust font size
+            }
+            }
+          }
+        }
+      }
+    });
+  </script>
+</html>

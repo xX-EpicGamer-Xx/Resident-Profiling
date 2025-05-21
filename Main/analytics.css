@@ -1,0 +1,345 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #08110E, #3F6656 );
+}
+
+.main-tab {
+    width: 94.79%;
+    height: 90.74%;
+    border-left: 1px solid #57977C;
+    border-right: 1px solid #57977C;
+    border-bottom: 1px solid #57977C;
+    border-top: 100px solid #57977C; /* Top border as percentage of height */
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+}
+
+.separator {
+    position: absolute;
+    left: 10px; /* space from the left edge inside the rectangle */
+    top: 50%; 
+    left: 10%;
+    transform: translateY(-45%);
+    width: 1px;
+    height: 70%;
+    background-color: #57977C;
+}
+
+#dashboard-tab {
+    position: absolute;
+    top: 20%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/dashboard.png');
+}
+
+#analytics-tab {
+    position: absolute;
+    top: 35%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/analytics(clicked).png');
+    background-color: transparent;
+    z-index: 1;
+}
+
+#database-tab {
+    position: absolute;
+    top: 50%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/table.png');
+    background-color: transparent;
+}
+
+#filing-tab {
+    position: absolute;
+    top: 65%; /* slight offset from the top */
+    left: 4.5%;
+    width: 75px;
+    object-fit: cover;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/filing.png');
+    background-color: transparent;
+}
+
+#user-account-tab {
+    position: absolute;
+    top: 85%; /* slight offset from the top */
+    left: 4.5%;
+    object-fit: cover;
+    width: 75px;
+    height: 75px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    background-image: url('images/user-account.png');
+    background-color: transparent;
+}
+
+.shade {
+    position: absolute;
+    top: 32.5%; /* slight offset from the top */
+    left: 2.7%;
+    width: 7.3%;
+    height: 12%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.sex-ratio {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    width: 20%;
+    height: 35%;
+    border: 1px solid #57977C;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+    z-index: 12; /* above everything else */
+}
+
+.resident-number {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 20%;
+    height: 15%;
+    border: 1px solid #57977C;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+    z-index: 1; /* above everything else */
+}
+
+.family-number {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    height: 15%;
+    border: 1px solid #57977C;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+    z-index: 1; /* above everything else */
+}
+
+.age-range {
+    position: absolute;
+    top: 62%;
+    left: 15%;
+    width: 45%;
+    height: 27%;
+    border: 1px solid #57977C;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+    z-index: 1; /* above everything else */
+}
+
+
+.sorting-system {
+    position: absolute;
+    top: 20%;
+    left: 64%;
+    width: 28%;
+    height: 69%;
+    border: 1px solid #57977C;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+    z-index: 1; /* above everything else */
+}
+
+.sex-ratio-text {
+    position: absolute;
+    top: 17%;
+    left: 17%;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 300; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.resident-number-text {
+    position: absolute;
+    top: 17%;
+    left: 42%;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 300; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.family-number-text {
+    position: absolute;
+    top: 37%;
+    left: 42%;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 300; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.age-range-text {
+    position: absolute;
+    top: 59%;
+    left: 17%;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 300; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sorting-system-text {
+    position: absolute;
+    top: 17%;
+    left: 66%;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 300; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.residents-icon {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* or cover if you prefer full fill */
+    z-index: 12; /* above everything else */
+    margin: 15px; /* optional margin */
+}
+
+.family-icon {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* or cover if you prefer full fill */
+    z-index: 12; /* above everything else */
+    margin: 15px; /* optional margin */
+}
+
+#residents-number {
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    color: #57977C;
+    font-size: 50px;
+    font-weight: 900; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#families-number {
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    color: #57977C;
+    font-size: 50px;
+    font-weight: 900; /* very bold */
+    font-family: 'Inter', sans-serif; /* <-- use Inter */
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    z-index: 10;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#genderChart {
+    display: block;
+    margin: 5% auto;
+    max-width: 300px;
+}
+
+#ageChart {
+    display: block;
+    margin: 2% auto;
+    max-width: 800px;
+}

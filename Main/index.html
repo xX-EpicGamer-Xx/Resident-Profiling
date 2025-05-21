@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Table Example</title>
+ <style>
+ 
+table {
+ 
+border-collapse: collapse;
+ 
+border-spacing: 5em;
+ 
+width: 100%;
+ 
+}
+ 
+table, th, td {
+ 
+border: 1px solid black;
+ 
+width: 10%;
+ 
+height: 10%;
+ 
+margin: 20px;
+ 
+border-spacing: 5px;
+ 
+}
+ 
+th, td {
+ 
+padding: 20px;
+ 
+text-align: center;
+ 
+}
+ </style>
+</head>
+<body>
+<center>
+<table id="table1">
+ 
+<tr>
+ 
+<td onclick="changeColor(1)"></td>
+ 
+<td onclick="changeColor(2)"></td>
+ 
+<td onclick="changeColor(3)"></td>
+ 
+<td onclick="changeColor(4)"></td>
+ 
+<td onclick="changeColor(5)"></td>
+ 
+<td onclick="changeColor(6)"></td>
+ 
+<td onclick="changeColor(7)"></td>
+ 
+<td onclick="changeColor(8)"></td>
+ 
+<td onclick="changeColor(9)"></td>
+ 
+<td onclick="changeColor(10)"></td>
+ </tr>
+ <tr>
+ 
+<td onclick="changeColor(11)"></td>
+ 
+<td onclick="changeColor(12)"></td>
+ 
+<td onclick="changeColor(13)"></td>
+ 
+<td onclick="changeColor(14)"></td>
+ 
+<td onclick="changeColor(15)"></td>
+ 
+<td onclick="changeColor(16)"></td>
+ 
+<td onclick="changeColor(17)"></td>
+ 
+<td onclick="changeColor(18)"></td>
+ 
+<td onclick="changeColor(19)"></td>
+ 
+<td onclick="changeColor(20)"></td>
+ </tr>
+</table>
+<table id="table2" border="1">
+ <tr>
+ 
+<td onclick="changeColorAndText(1)">1</td>
+ 
+<td onclick="changeColorAndText(2)">2</td>
+ 
+<td onclick="changeColorAndText(3)">3</td>
+ 
+<td onclick="changeColorAndText(4)">4</td>
+ 
+<td onclick="changeColorAndText(5)">5</td>
+ 
+<td onclick="changeColorAndText(6)">6</td>
+ 
+<td onclick="changeColorAndText(7)">7</td>
+ 
+<td onclick="changeColorAndText(8)">8</td>
+ 
+<td onclick="changeColorAndText(9)">9</td>
+ 
+<td onclick="changeColorAndText(10)">10</td>
+ </tr>
+ <tr>
+ 
+<td onclick="changeColorAndText(11)">11</td>
+ 
+<td onclick="changeColorAndText(12)">12</td>
+ 
+<td onclick="changeColorAndText(13)">13</td>
+ 
+<td onclick="changeColorAndText(14)">14</td>
+ 
+<td onclick="changeColorAndText(15)">15</td>
+ 
+<td onclick="changeColorAndText(16)">16</td>
+ 
+<td onclick="changeColorAndText(17)">17</td>
+ 
+<td onclick="changeColorAndText(18)">18</td>
+ 
+<td onclick="changeColorAndText(19)">19</td>
+ 
+<td onclick="changeColorAndText(20)">20</td>
+ </tr>
+</table>
+<table border="1">
+ <tr>
+ 
+<td onclick="changeTable1Color('red')">Red</td>
+ 
+<td onclick="changeTable1Color('blue')">Blue</td>
+ 
+<td onclick="changeTable1Color('green')">Green</td>
+ 
+<td onclick="changeTable1Color('yellow')">Yellow</td>
+
+ 
+<td onclick="changeTable1Color('orange')">Orange</td>
+ </tr>
+</table>
+<script>
+ function changeColor(number) {
+ 
+var table2 = document.getElementById('table2');
+ 
+var selectedCell = table2.querySelector('td.selected');
+ 
+ 
+if (selectedCell) {
+ 
+selectedCell.style.backgroundColor = '';
+ 
+selectedCell.style.color = '';
+ 
+selectedCell.classList.remove('selected');
+ 
+}
+ 
+ 
+selectedCell = table2.rows[Math.floor((number - 1) / 10)].cells[(number - 1) % 10];
+ 
+selectedCell.style.backgroundColor = 'black';
+ 
+selectedCell.classList.add('selected');
+ }
+ function changeColorAndText(number) {
+ 
+var table2 = document.getElementById('table2');
+ 
+var selectedCell = table2.querySelector('td.selected');
+ 
+ 
+if (selectedCell) {
+ 
+selectedCell.style.backgroundColor = '';
+ 
+selectedCell.style.color = '';
+ 
+selectedCell.classList.remove('selected');
+ 
+}
+ 
+ 
+selectedCell = table2.rows[Math.floor((number - 1) / 10)].cells[(number - 1) % 10];
+ 
+selectedCell.style.backgroundColor = 'black';
+ 
+selectedCell.style.color = 'white';
+ 
+selectedCell.classList.add('selected');
+ 
+ 
+var table1 = document.getElementById('table1');
+ 
+var correspondingCell = table1.rows[Math.floor((number - 1) / 10)].cells[(number - 1) % 10];
+ 
+correspondingCell.textContent = number;
+ }
+ function changeTable1Color(color) {
+ 
+var table1 = document.getElementById('table1');
+ 
+var selectedCell = document.querySelector('#table2 td.selected');
+ 
+ 
+if (selectedCell) {
+ 
+var correspondingCell = table1.rows[Math.floor((parseInt(selectedCell.textContent) - 1) / 10)].cells[(parseInt(selectedCell.textContent) 
+- 1) % 10];
+ 
+correspondingCell.style.backgroundColor = color;
+ 
+}
+ }
+</script>
+</center>
+</body>
+</html>
